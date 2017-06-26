@@ -81,7 +81,7 @@ DATABASES = {
         'USER': 'yfding',
         'PASSWORD': 'yfding',
         'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'PORT': '3307',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRIcT_TRANS_TABLES'",
             'charset': 'utf8mb4',
