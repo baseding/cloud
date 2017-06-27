@@ -23,12 +23,13 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Question
-    template_name = 'polls/detail.html'
+    #template_name = 'polls/detail.html'
 
 
 class ResultsView(generic.DetailView):
     model = Question
-    template_name = 'polls/results.html'
+    ''' if comment below line, it will render to queston_detail.html view '''
+    template_name = 'polls/question_results.html'
 
 
 def vote(request, question_id):
