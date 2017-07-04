@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+import simplejson
+import time,datetime
+
+
+# Create your views here.
+
+@csrf_exempt
+def index(request):
+    dict = {}
+    info = 'Data log save success'
+    try:
+        if request.method == 'POST':
+            #req = simplejson.loads(request.raw_post_data)
+            #type = req['type']
+            #dstip = req['dstip']
+            #print(type)
+            type = request.POST.get('type')
+            dstip = request.POST.get('dstip')
+            #type = request.POST['type']
+            #type = "tcping"
+    except:
+        import sys
+        info = "%s || %s" % (sys.exc_info()[0], sys.exc_info()[1])
+    
+    dict['type'] = type
+    dict['dstip'] = dstip
+    dict['message'] = info
+    dict['create_at'] = str(time.ctime())
+    json = simplejson.dumps(dict)
+    return HttpResponse(json)
