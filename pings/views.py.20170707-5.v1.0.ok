@@ -83,27 +83,21 @@ def cmd_fping(json_data):
 
 
     # CMD
-    #cmd = "fping -p 100 -c 5 "+ str(dstip)
-    cmd = "fping -c 5 "+ str(dstip)
+    cmd = "fping -p 100 -c 5 "+ str(dstip)
     p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
     output, error = p.communicate()
 
     latency = output.split('\n')
     #print(latency[4])
 
-    # List len will be ping time (5) + 1
-    fping_success_num = len(latency)
-
     # Result
-    # avg: get from the last fping success result:
-    # loss: get from caculate
     if p.returncode:
         cmd_dict["loss"]= 100
         cmd_dict["avg"]= 0
 
     elif p.returncode == 0:
-        result = re.split("\(|%| ",latency[fping_success_num - 2 ])
-        cmd_dict["loss"]= 100 - ((fping_success_num - 1) * 100 / 5 )
+        result = re.split("\(|%| ",latency[4])
+        cmd_dict["loss"]= result[10]
         cmd_dict["avg"]= result[8]
 
     return cmd_dict
