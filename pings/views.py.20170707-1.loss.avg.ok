@@ -38,13 +38,14 @@ def index(request):
     
     
     
-    # Data Check 
+    # Data Check
+    # 
     if is_valid_ip(dstip) == False:
         return HttpResponse("ERROR: Wrong IP Format: " + dstip)
     elif is_valid_ip(sshhostip) == False:
         return HttpResponse("ERROR: Wrong IP Format: " + sshhostip)
 
-    
+    #
     if type == "ping" or type == "tcp ping":
         if type == "tcp ping":
             if is_valid_port(port) == False:
@@ -52,14 +53,30 @@ def index(request):
     else:
         return HttpResponse("ERROR: Wrong Format: " + type )
 
-    # CMD Call
-    if type == "fping":
-        cmd_dict = cmd_fping(json_data)
-    elif type == "tcp ping":
-        cmd_dict = cmd_tcping(json_data)
+    # CMD
+    cmd = "fping -p 100 -c 5 "+ str(dstip)
+    p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
+    output, error = p.communicate()
 
-    # Return Result
-    dict = cmd_dict
+    latency = output.split('\n')
+    #print(latency[4])
+
+    result = re.split("\(|%| ",latency[4])
+    loss= result[10]
+    avg= result[8]
+    print(loss)
+    print(avg)
+    
+
+    #result = re.split("=",latency[0])
+    #print(result[3])   
+
+
+
+    # Return 
+    dict['loss'] = loss
+    dict['avg'] = avg
+    dict['type'] = type
     dict['dstip'] = dstip
     dict['create_at'] = str(time.ctime())
     json = simplejson.dumps(dict)
@@ -73,56 +90,4 @@ def is_valid_ip(ip):
 def is_valid_port(port):
     m = 0 < int(port) < 65535
     return bool(m)
-
-def cmd_fping(json_data):
-    cmd_dict = {}
-    #Json Data
-    type = json_data["json_data"][0]["type"]
-    dstip = json_data["json_data"][0]["dstip"]
-    sshhostip = json_data["json_data"][0]["sshhostip"]
-
-
-    # CMD
-    cmd = "fping -p 100 -c 5 "+ str(dstip)
-    p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
-    output, error = p.communicate()
-
-    latency = output.split('\n')
-    #print(latency[4])
-
-    # Result
-    if p.returncode:
-        cmd_dict["loss"]= 100
-        cmd_dict["avg"]= 0
-
-    elif p.returncode == 0:
-        result = re.split("\(|%| ",latency[4])
-        cmd_dict["loss"]= result[10]
-        cmd_dict["avg"]= result[8]
-
-    return cmd_dict
-
-
-def cmd_tcping(json_data):
-    cmd_dict = {}
-    #Json Data
-    dstip = json_data["json_data"][0]["dstip"]
-    sshhostip = json_data["json_data"][0]["sshhostip"]
-    port = json_data["json_data"][0]["port"]
-
-    # CMD
-    cmd = "nmap -Pn -p "+ str(port) + " " + str(dstip) + ''' | awk "\$1 ~ /''' + str(port) + '''/ {print \$2}" ''' + " | grep 'open' "
-    print cmd
-    p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
-    output, error = p.communicate()
-
-    if p.returncode:
-        cmd_dict["port_status"] = 1
-    elif p.returncode == 0:
-        cmd_dict["port_status"] = 0
-
-    return cmd_dict
-
-
-
 

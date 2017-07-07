@@ -1,0 +1,57 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+import time,datetime
+import simplejson
+import re
+
+# Create your views here.
+
+@csrf_exempt
+def index(request):
+    dict = {}
+    info = 'Data log save success'
+    # Handle Post Data
+    try:
+        if request.method == 'POST':
+            #json_data = json.loads(request.body.decode("utf-8"))
+            json_data = simplejson.loads(request.body)
+            #list
+            type = json_data["json_data"][0]["type"]
+            dstip = json_data["json_data"][0]["dstip"]
+
+        else:
+            return HttpResponse("ERROR: Wrong Request Method 'GET'")
+            
+    except:
+        import sys
+        info = "%s || %s" % (sys.exc_info()[0], sys.exc_info()[1])
+    
+    
+    
+    # Data Check
+    if is_valid_ip(dstip) == False:
+        return HttpResponse("ERROR: Wrong IP Format: " + dstip)
+
+
+
+    # Return 
+    dict['is_ip'] = is_valid_ip(dstip)
+    dict['type'] = type
+    dict['dstip'] = dstip
+    dict['message'] = info
+    dict['create_at'] = str(time.ctime())
+    json = simplejson.dumps(dict)
+    return HttpResponse(json)
+
+
+def is_valid_ip(ip):
+    m = re.match(r"^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$", ip)
+    return bool(m) and all(map(lambda n: 0 <= int(n) <= 255, m.groups()))
+
+
+
+

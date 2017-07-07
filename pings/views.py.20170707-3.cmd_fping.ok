@@ -53,10 +53,8 @@ def index(request):
         return HttpResponse("ERROR: Wrong Format: " + type )
 
     # CMD Call
-    if type == "fping":
-        cmd_dict = cmd_fping(json_data)
-    elif type == "tcp ping":
-        cmd_dict = cmd_tcping(json_data)
+    cmd_dict = cmd_fping(json_data)
+
 
     # Return Result
     dict = cmd_dict
@@ -101,28 +99,3 @@ def cmd_fping(json_data):
         cmd_dict["avg"]= result[8]
 
     return cmd_dict
-
-
-def cmd_tcping(json_data):
-    cmd_dict = {}
-    #Json Data
-    dstip = json_data["json_data"][0]["dstip"]
-    sshhostip = json_data["json_data"][0]["sshhostip"]
-    port = json_data["json_data"][0]["port"]
-
-    # CMD
-    cmd = "nmap -Pn -p "+ str(port) + " " + str(dstip) + ''' | awk "\$1 ~ /''' + str(port) + '''/ {print \$2}" ''' + " | grep 'open' "
-    print cmd
-    p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
-    output, error = p.communicate()
-
-    if p.returncode:
-        cmd_dict["port_status"] = 1
-    elif p.returncode == 0:
-        cmd_dict["port_status"] = 0
-
-    return cmd_dict
-
-
-
-
