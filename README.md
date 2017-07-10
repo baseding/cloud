@@ -5,3 +5,4 @@
 # Custom git color
 # 20170626
 # 20170627
+# 20170710 add /cloud/cloud.sh
