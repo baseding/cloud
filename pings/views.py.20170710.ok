@@ -37,26 +37,22 @@ def index(request):
     except:
         import sys
         info = "%s || %s" % (sys.exc_info()[0], sys.exc_info()[1])
-        logger_msg(info)  
+    
     
     
     # Data Check 
     if is_valid_ip(dstip) == False:
-        logger_msg("ERROR: Wrong IP Format: " + dstip)
         return HttpResponse("ERROR: Wrong IP Format: " + dstip)
     elif is_valid_ip(sshhostip) == False:
-        logger_msg("ERROR: Wrong IP Format: " + sshhostip)
         return HttpResponse("ERROR: Wrong IP Format: " + sshhostip)
 
     
     if type == "ping" or type == "tcp ping":
         if type == "tcp ping":
             if is_valid_port(port) == False:
-                logger_msg("ERROR: Wrong Port Format: " + port)
                 return HttpResponse("ERROR: Wrong Port Format: " + port)
     else:
-        logger_msg("ERROR: Wrong Type Format: " + type)
-        return HttpResponse("ERROR: Wrong Type Format: " + type )
+        return HttpResponse("ERROR: Wrong Format: " + type )
 
     # CMD Call
     if type == "ping":
@@ -139,10 +135,10 @@ def cmd_tcping(json_data):
 def logger_msg(msg):
     # set up logging to file - see previous section for more details
     logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s %(name)-8s %(levelname)-8s: %(message)s',
+                    format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
                     #datefmt='%m-%d %H:%M',
-                    filename='/cloud/pings/logs/pings.log-'+time.strftime("%Y-%m-%d"),
-                    filemode='a')
+                    filename='./pings.log-'+time.strftime("%Y-%m-%d"),
+                    filemode='w')
     # define a Handler which writes INFO messages or higher to the sys.stderr
     console = logging.StreamHandler()
     console.setLevel(logging.INFO)
@@ -157,7 +153,7 @@ def logger_msg(msg):
     logging.getLogger('').addHandler(console)
  
     # Now, we can log to the root logger, or any other logger. First the root...
-    #logging.info(msg)
+    logging.info(msg)
  
     # Now, define a couple of other loggers which might represent areas in your
     # application:

@@ -1,0 +1,21 @@
+2017-07-10 05:27:31,026 pings    ERROR   : Wrong Request Method: GET
+2017-07-10 05:31:37,221 pings    ERROR   : Wrong Request Method: GET
+2017-07-10 05:34:29,598 pings    ERROR   : Wrong Request Method: GET
+2017-07-10 05:34:50,209 pings    ERROR   : ERROR: Wrong Format: pings
+2017-07-10 05:36:06,105 pings    ERROR   : ERROR: Wrong Type Format: pings
+2017-07-10 05:36:21,807 pings    ERROR   : ERROR: Wrong IP Format: 10.50.205
+2017-07-10 05:37:00,121 django.request ERROR   : Internal Server Error: /pings/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/cloud/pings/views.py", line 55, in index
+    logger_msg("ERROR: Wrong Port Format: " + port)
+TypeError: coercing to Unicode: need string or buffer, int found
+2017-07-10 05:38:48,580 pings    ERROR   : ERROR: Wrong Port Format: 80102
+2017-07-10 05:44:31,414 pings    ERROR   : ERROR: Wrong IP Format: 
