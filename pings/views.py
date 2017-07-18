@@ -88,12 +88,20 @@ def cmd_fping(json_data):
     #Json Data
     type = json_data["json_data"][0]["type"]
     dstip = json_data["json_data"][0]["dstip"]
+    srcip = json_data["json_data"][0]["srcip"]
     sshhostip = json_data["json_data"][0]["sshhostip"]
-
 
     # CMD
     #cmd = "fping -p 100 -c 5 "+ str(dstip)
-    cmd = "fping -c 5 "+ str(dstip)
+    #cmd = "fping -c 5 "+ str(dstip)
+    
+    if is_valid_ip(srcip):
+        cmd =  "ssh " + str(sshhostip) + " ' fping -c 5 " + str(dstip) + " -S " + str(srcip) + " ' "
+    else:
+        cmd =  "ssh " + str(sshhostip) + " ' fping -c 5 " + str(dstip) + " ' "
+
+    print cmd
+
     p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
     output, error = p.communicate()
 
@@ -123,11 +131,17 @@ def cmd_tcping(json_data):
     #Json Data
     dstip = json_data["json_data"][0]["dstip"]
     sshhostip = json_data["json_data"][0]["sshhostip"]
+    srcip = json_data["json_data"][0]["srcip"]
     port = json_data["json_data"][0]["port"]
 
-    # CMD
-    cmd = "nmap -Pn -p "+ str(port) + " " + str(dstip) + ''' | awk "\$1 ~ /''' + str(port) + '''/ {print \$2}" ''' + " | grep 'open' "
+    # CMD /dev/null replace vz
+    if is_valid_ip(srcip):
+        cmd = "ssh " + str(sshhostip) + " 'nc -w4 " + str(dstip) +" "+ str(port) + " -s " + str(srcip) + " </dev/null' "
+    else:
+        cmd = "ssh " + str(sshhostip) + " 'nc -w4 " + str(dstip) +" "+ str(port) + " </dev/null' "
+
     print cmd
+
     p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
     output, error = p.communicate()
 
