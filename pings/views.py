@@ -136,9 +136,9 @@ def cmd_tcping(json_data):
 
     # CMD /dev/null replace vz
     if is_valid_ip(srcip):
-        cmd = "ssh " + str(sshhostip) + " 'nc -w4 " + str(dstip) +" "+ str(port) + " -s " + str(srcip) + " </dev/null' "
+        cmd = "ssh " + str(sshhostip) + " 'nc -w4 --send-only -s " + str(srcip) + " " + str(dstip) +" "+ str(port) + " </dev/null' "
     else:
-        cmd = "ssh " + str(sshhostip) + " 'nc -w4 " + str(dstip) +" "+ str(port) + " </dev/null' "
+        cmd = "ssh " + str(sshhostip) + " 'nc -w4 --send-only -s " + str(srcip) + " " + str(dstip) +" "+ str(port) + " </dev/null' "
 
     print cmd
 
