@@ -1,0 +1,205 @@
+2017-07-19 13:29:31,722 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-07-19 13:29:31,722 django.request ERROR: Internal Server Error: /httpd/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view httpd.views.index didn't return an HttpResponse object. It returned None instead.
+2017-07-19 13:30:30,491 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-07-19 13:30:30,492 django.request ERROR: Internal Server Error: /httpd/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    "returned None instead." % (callback.__module__, view_name)
+ValueError: The view httpd.views.index didn't return an HttpResponse object. It returned None instead.
+2017-07-19 13:32:59,887 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-07-19 13:32:59,888 django.request ERROR: Internal Server Error: /httpd/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/cloud/httpd/views.py", line 51, in index
+    dict = cmd_dict
+NameError: global name 'cmd_dict' is not defined
+2017-07-19 13:33:47,286 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-07-19 13:33:47,286 httpd INFO: response:{u'domain': 'pptv.10690007.net', u'datetime': 'Wed Jul 19 13:33:47 2017'}
+2017-07-19 13:37:35,182 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-07-19 13:37:35,182 httpd INFO: response:{u'domain': 'pptv.10690007.net', u'datetime': 'Wed Jul 19 13:37:35 2017'}
+2017-07-19 13:38:08,840 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net,', 'type': 'http', 'port': '80'}]}
+2017-07-19 13:38:08,840 httpd INFO: response:{u'domain': 'pptv.10690007.net,', u'datetime': 'Wed Jul 19 13:38:08 2017'}
+2017-07-19 13:38:32,770 httpd INFO: request: {'json_data': [{'path': '/sms/mt/', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-07-19 13:38:32,771 httpd INFO: response:{u'domain': 'pptv.10690007.net', u'datetime': 'Wed Jul 19 13:38:32 2017'}
+2017-07-19 13:38:42,066 httpd INFO: request: {'json_data': [{'path': '/sms/mt/', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-07-19 13:38:42,067 httpd INFO: response:{u'domain': 'pptv.10690007.net', u'datetime': 'Wed Jul 19 13:38:42 2017'}
+2017-07-19 13:39:00,403 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-07-19 13:39:00,404 httpd INFO: response:{u'domain': 'pptv.10690007.net', u'datetime': 'Wed Jul 19 13:39:00 2017'}
+2017-07-19 14:07:34,553 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-07-19 14:07:34,553 django.request ERROR: Internal Server Error: /httpd/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/cloud/httpd/views.py", line 51, in index
+    elif is_valid_ip(sshhostip) == False:
+NameError: global name 'sshhostip' is not defined
+2017-07-19 14:08:27,204 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:08:27,204 django.request ERROR: Internal Server Error: /httpd/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/cloud/httpd/views.py", line 51, in index
+    elif is_valid_ip(sshhostip) == False:
+NameError: global name 'sshhostip' is not defined
+2017-07-19 14:08:59,419 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:08:59,420 django.request ERROR: Internal Server Error: /httpd/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/cloud/httpd/views.py", line 51, in index
+    elif is_valid_ip(sshhostip) == False:
+NameError: global name 'sshhostip' is not defined
+2017-07-19 14:09:46,351 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:09:46,352 django.request ERROR: Internal Server Error: /httpd/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/cloud/httpd/views.py", line 58, in index
+    cmd_dict = cmd_curl_ncat(json_data)
+  File "/cloud/httpd/views.py", line 84, in cmd_curl_ncat
+    dstip = json_data["json_data"][0]["dstip"]
+KeyError: u'dstip'
+2017-07-19 14:10:31,008 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:10:31,009 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:10:42,453 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '808080', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:10:42,454 httpd ERROR: Wrong Domain or Path Format: http://pptv.10690007.net:808080/sms/mt
+2017-07-19 14:10:42,454 django.request ERROR: Internal Server Error: /httpd/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/cloud/httpd/views.py", line 50, in index
+    return HttpResponse("Wrong IP Format: " + dstip)
+NameError: global name 'dstip' is not defined
+2017-07-19 14:11:03,691 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '8080', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:11:03,692 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:11:11,970 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80808', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:11:11,970 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:11:14,166 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80808', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:11:14,166 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:12:14,304 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80808', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:12:14,305 httpd ERROR: Wrong Port Format: 80808
+2017-07-19 14:12:35,313 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '8080', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:12:35,314 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:17:10,635 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '8080', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:17:10,716 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:18:29,120 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '443', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:18:29,138 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:19:08,607 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '443', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:19:08,624 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:19:25,445 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:19:25,462 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:26:56,851 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:26:56,876 django.request ERROR: Internal Server Error: /httpd/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/cloud/httpd/views.py", line 58, in index
+    cmd_dict = cmd_curl_ncat(json_data)
+  File "/cloud/httpd/views.py", line 116, in cmd_curl_ncat
+    cmd_dict["avg"]= result[8]
+IndexError: list index out of range
+2017-07-19 14:43:16,610 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:43:17,283 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:44:02,027 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:44:02,244 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:44:58,726 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:44:59,370 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:45:28,874 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:45:29,523 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:45:57,785 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:45:58,846 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:46:17,392 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:46:18,053 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 14:47:15,521 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 14:47:16,280 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 16:01:04,647 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 16:01:04,731 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 16:02:30,506 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 16:02:30,511 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 16:12:49,655 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 16:12:49,681 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 16:14:15,309 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 16:14:15,357 httpd INFO: response:{u'domain': 'pptv.10690007.net'}
+2017-07-19 16:15:53,985 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 16:15:54,007 httpd INFO: response:{u'lantency': u'0.014', u'domain': 'pptv.10690007.net'}
+2017-07-19 16:15:56,921 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 16:15:56,942 httpd INFO: response:{u'lantency': u'0.013', u'domain': 'pptv.10690007.net'}
+2017-07-19 16:15:58,547 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 16:15:58,568 httpd INFO: response:{u'lantency': u'0.013', u'domain': 'pptv.10690007.net'}
+2017-07-19 16:15:59,715 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 16:15:59,737 httpd INFO: response:{u'lantency': u'0.014', u'domain': 'pptv.10690007.net'}
+2017-07-19 16:16:00,979 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 16:16:01,055 httpd INFO: response:{u'lantency': u'0.067', u'domain': 'pptv.10690007.net'}
+2017-07-19 16:30:40,460 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 16:30:40,482 httpd INFO: response:{u'lantency': u'0.014', u'domain': 'pptv.10690007.net'}
+2017-07-19 16:30:53,260 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-19 16:30:53,303 httpd INFO: response:{u'lantency': u'0.024', u'domain': 'pptv.10690007.net'}
+2017-07-19 16:39:41,048 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-07-19 16:39:41,065 httpd INFO: response:{u'domain': 'shdr.etonenet.com'}
+2017-07-19 16:40:39,706 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-07-19 16:40:39,724 httpd INFO: response:{u'domain': 'shdr.etonenet.com'}
+2017-07-19 16:42:44,594 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-07-19 16:42:44,611 httpd INFO: response:{u'domain': 'shdr.etonenet.com'}
+2017-07-19 16:44:59,081 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-07-19 16:44:59,486 httpd INFO: response:{u'lantency': u'0.395', u'domain': 'shdr.etonenet.com'}
+2017-07-19 16:45:02,006 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-07-19 16:45:02,136 httpd INFO: response:{u'lantency': u'0.120', u'domain': 'shdr.etonenet.com'}
+2017-07-19 16:45:03,801 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-07-19 16:45:03,926 httpd INFO: response:{u'lantency': u'0.116', u'domain': 'shdr.etonenet.com'}
+2017-07-19 16:59:40,772 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-07-19 16:59:41,185 httpd INFO: response:{u'lantency': u'0.403', u'domain': 'shdr.etonenet.com'}
+2017-07-19 16:59:42,941 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-07-19 16:59:43,075 httpd INFO: response:{u'lantency': u'0.124', u'domain': 'shdr.etonenet.com'}
+2017-07-19 17:00:54,253 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-07-19 17:00:54,408 httpd INFO: response:{u'lantency': u'0.144', u'domain': 'shdr.etonenet.com'}
