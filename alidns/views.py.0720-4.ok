@@ -27,14 +27,7 @@ def index(request):
 
 def records(request):
     result = describedomainrecords()
-    print(result["DomainRecords"])
-    print(result["DomainRecords"]["Record"][0]["RR"])
-
-
-    for r in result["DomainRecords"]["Record"]:
-        print r["RR"] + r["DomainName"] + r["RecordId"]
-
-    return HttpResponse("result: " + result["DomainRecords"]["Record"][0]["RR"])
+    return HttpResponse("result: " + result["Domain"][0]["DomainName"])
 
 
 

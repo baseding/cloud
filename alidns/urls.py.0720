@@ -5,6 +5,6 @@ app_name='alidns'
 urlpatterns = [
     # ex: /alidns/
     url(r'^$', views.index, name='index'),
-    url(r'^records/$', views.records, name='records'),
+
 ]
 
