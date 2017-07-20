@@ -203,3 +203,31 @@ IndexError: list index out of range
 2017-07-19 16:59:43,075 httpd INFO: response:{u'lantency': u'0.124', u'domain': 'shdr.etonenet.com'}
 2017-07-19 17:00:54,253 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
 2017-07-19 17:00:54,408 httpd INFO: response:{u'lantency': u'0.144', u'domain': 'shdr.etonenet.com'}
+2017-07-20 08:41:18,963 httpd INFO: request: {'json_data': [{'srcip': '218.202.226.119', 'dstip': '119.75.213.50', 'type': 'tcp ping', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-20 08:41:18,963 httpd INFO: <type 'exceptions.KeyError'> || u'domain'
+2017-07-20 08:41:18,964 django.request ERROR: Internal Server Error: /httpd/
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python2.7/site-packages/django/views/decorators/csrf.py", line 58, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/cloud/httpd/views.py", line 45, in index
+    url = "http://" + str(domain) +":" + str(port) + str(path)
+UnboundLocalError: local variable 'domain' referenced before assignment
+2017-07-20 08:41:58,155 django.request ERROR: Internal Server Error: /pings
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/utils/deprecation.py", line 138, in __call__
+    response = self.process_request(request)
+  File "/usr/lib/python2.7/site-packages/django/middleware/common.py", line 63, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "/usr/lib/python2.7/site-packages/django/middleware/common.py", line 101, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 10.8.60.82:8000/pings/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+2017-07-20 08:42:06,009 pings INFO: request: {'json_data': [{'srcip': '218.202.226.119', 'dstip': '119.75.213.50', 'type': 'tcp ping', 'port': '80', 'sshhostip': '10.1.60.19'}]}
+2017-07-20 08:42:06,187 pings INFO: response:{u'port_status': 0, u'dstip': '119.75.213.50', u'datetime': 'Thu Jul 20 08:42:06 2017'}

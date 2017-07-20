@@ -18,6 +18,7 @@ from django.contrib import admin
 
 
 urlpatterns = [
+    url(r'^alidns/', include('alidns.urls')),
     url(r'^httpd/', include('httpd.urls')),
     url(r'^pings/', include('pings.urls')),
     url(r'^polls/', include('polls.urls')),

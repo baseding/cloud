@@ -69,7 +69,7 @@ def index(request):
     # Return Result
     dict = cmd_dict
     dict['dstip'] = dstip
-    ##dict['datetime'] = str(time.ctime())
+    dict['datetime'] = str(time.ctime())
     logger_msg("response:"+ str(dict),"info")
     json = simplejson.dumps(dict)
     return HttpResponse(json)
@@ -161,17 +161,17 @@ def logger_msg(msg,lvl="info"):
                     filename='/cloud/pings/logs/pings.log-'+time.strftime("%Y-%m-%d"),
                     filemode='a')
     # define a Handler which writes INFO messages or higher to the sys.stderr
-    ##console = logging.StreamHandler()
-    ##console.setLevel(logging.INFO)
+    console = logging.StreamHandler()
+    console.setLevel(logging.INFO)
 
     # set a format which is simpler for console use
     #formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
-    ##formatter = logging.Formatter('%(asctime)s  %(name)-12s: %(levelname)-8s %(message)s')
+    formatter = logging.Formatter('%(asctime)s  %(name)-12s: %(levelname)-8s %(message)s')
 
     # tell the handler to use this format
-    ##console.setFormatter(formatter)
+    console.setFormatter(formatter)
     # add the handler to the root logger
-    ##logging.getLogger('').addHandler(console)
+    logging.getLogger('').addHandler(console)
  
     # Now, we can log to the root logger, or any other logger. First the root...
     #logging.info(msg)
