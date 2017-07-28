@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="/" />
+
+{% if domain_records_list %}
+    <ul>
+    {% for record in domain_records_list %}
+        <li><a href="{% url 'alidns:index' records.rr %}">{{ record.rr }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

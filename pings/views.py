@@ -158,28 +158,19 @@ def logger_msg(msg,lvl="info"):
     logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(name)-s %(levelname)-s: %(message)s',
                     #datefmt='%m-%d %H:%M',
-                    filename='/cloud/pings/logs/pings.log-'+time.strftime("%Y-%m-%d"),
+                    #filename='/cloud/pings/logs/pings.log-'+time.strftime("%Y-%m-%d"),
                     filemode='a')
-    # define a Handler which writes INFO messages or higher to the sys.stderr
-    ##console = logging.StreamHandler()
-    ##console.setLevel(logging.INFO)
-
-    # set a format which is simpler for console use
-    #formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
-    ##formatter = logging.Formatter('%(asctime)s  %(name)-12s: %(levelname)-8s %(message)s')
-
-    # tell the handler to use this format
-    ##console.setFormatter(formatter)
-    # add the handler to the root logger
-    ##logging.getLogger('').addHandler(console)
- 
-    # Now, we can log to the root logger, or any other logger. First the root...
-    #logging.info(msg)
  
     # Now, define a couple of other loggers which might represent areas in your
     # application:
- 
+
     logger1 = logging.getLogger('pings')
+
+    LOG_FILE = '/cloud/pings/logs/pings.log'
+    filehandler = logging.handlers.TimedRotatingFileHandler(LOG_FILE,when='midnight',interval=1,backupCount=90)
+    formatter = logging.Formatter('%(asctime)s %(name)-s %(levelname)-s: %(message)s')
+    filehandler.setFormatter(formatter)
+    logger1.addHandler(filehandler)
 
 
     if lvl == "error":

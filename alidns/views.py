@@ -3,10 +3,18 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 import json
 import ruamel.yaml as yaml
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkalidns.request.v20150109 import UpdateDomainRecordRequest, DescribeDomainRecordsRequest, DescribeDomainRecordInfoRequest, AddDomainRecordRequest, DescribeDomainsRequest
+
+#
+from django.urls import reverse
+from django.views import generic
+
+from django.utils import timezone
+#
 
 
 
@@ -21,20 +29,22 @@ client = AcsClient(
 
 
 #
+@csrf_exempt
 def index(request):
     result = describedomains()
     return HttpResponse("result: " + result["Domain"][0]["DomainName"])
 
 def records(request):
     result = describedomainrecords()
-    print(result["DomainRecords"])
-    print(result["DomainRecords"]["Record"][0]["RR"])
+
+    context = {
+        'domain_records_list': result["DomainRecords"]["Record"],
+    }
 
 
-    for r in result["DomainRecords"]["Record"]:
-        print r["RR"] + r["DomainName"] + r["RecordId"]
+    return render(request, 'alidns/records.html', context)
 
-    return HttpResponse("result: " + result["DomainRecords"]["Record"][0]["RR"])
+    #return HttpResponse("result: " + result["DomainRecords"]["Record"][0]["RR"])
 
 
 
