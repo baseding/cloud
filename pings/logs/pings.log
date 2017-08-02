@@ -38,3 +38,9 @@
 2017-08-06 01:00:10,273 pings INFO: response:{u'dstip': '218.202.227.4', u'loss': 0, u'avg': u'0.18'}
 2017-08-06 01:00:10,290 pings INFO: response:{u'dstip': '114.114.114.114', u'loss': 0, u'avg': u'14.1'}
 2017-08-06 01:00:10,291 pings INFO: response:{u'dstip': '114.114.114.114', u'loss': 0, u'avg': u'14.1'}
+2017-08-06 02:26:17,149 pings INFO: request: {'json_data': [{'srcip': '218.202.226.119', 'dstip': '119.75.213.50', 'type': 'ping', 'sshhostip': '10.1.60.19'}]}
+2017-08-06 02:26:21,348 pings INFO: response:{u'dstip': '119.75.213.50', u'loss': 0, u'avg': u'29.3'}
+2017-08-06 02:27:42,375 pings INFO: request: {'json_data': [{'srcip': '115.159.153.102', 'dstip': '218.202.226.108', 'type': 'ping', 'sshhostip': '115.159.153.102'}]}
+2017-08-06 02:27:42,564 pings INFO: response:{u'dstip': '218.202.226.108', u'loss': 100, u'avg': 0}
+2017-08-06 02:27:47,364 pings INFO: request: {'json_data': [{'srcip': '115.159.153.102', 'dstip': '218.202.226.108', 'type': 'ping', 'sshhostip': '115.159.153.102'}]}
+2017-08-06 02:27:47,443 pings INFO: response:{u'dstip': '218.202.226.108', u'loss': 100, u'avg': 0}

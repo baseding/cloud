@@ -115,39 +115,32 @@ def cmd_curl_ncat(json_data):
     return cmd_dict
 
 
+
 def logger_msg(msg,lvl="info"):
-    # set up logging to file - see previous section for more details
-    logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s %(name)-s %(levelname)-s: %(message)s',
-                    #datefmt='%m-%d %H:%M',
-                    filename='/cloud/httpd/logs/httpd.log-'+time.strftime("%Y-%m-%d"),
-                    filemode='a')
-    # define a Handler which writes INFO messages or higher to the sys.stderr
-    console = logging.StreamHandler()
-    console.setLevel(logging.INFO)
+    # Basic setting
+    #logging.basicConfig(level=logging.INFO,
+    #                format='%(asctime)s %(name)-s %(levelname)-s: %(message)s',
+    #                filename='/cloud/httpd/logs/pings.log',
+    #                filemode='w')
+ 
 
-    # set a format which is simpler for console use
-    #formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
-    formatter = logging.Formatter('%(asctime)s  %(name)-12s: %(levelname)-8s %(message)s')
-
-    # tell the handler to use this format
-    console.setFormatter(formatter)
-    # add the handler to the root logger
-    logging.getLogger('').addHandler(console)
- 
-    # Now, we can log to the root logger, or any other logger. First the root...
-    #logging.info(msg)
- 
-    # Now, define a couple of other loggers which might represent areas in your
-    # application:
- 
     logger1 = logging.getLogger('httpd')
 
+    LOG_FILE = '/cloud/httpd/logs/httpd.log'
+    filehandler = logging.handlers.TimedRotatingFileHandler(LOG_FILE,when='midnight',interval=1,backupCount=90)
+    formatter = logging.Formatter('%(asctime)s %(name)-s %(levelname)-s: %(message)s')
+    filehandler.setFormatter(formatter)
+    logger1.addHandler(filehandler)
+    logger1.setLevel(logging.INFO)
 
     if lvl == "error":
         logger1.error(msg)
     else:
         logger1.info(msg)
+
+
+    # REMOVE filehander
+    logger1.removeHandler(filehandler)
 
 
    
