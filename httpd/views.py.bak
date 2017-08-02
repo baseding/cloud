@@ -85,7 +85,6 @@ def cmd_curl_ncat(json_data):
     port = json_data["json_data"][0]["port"]
 
 
-
     # CMD
     if str(port) == "443":
         url = "https://" + str(domain) +":" + str(port) + str(path)
@@ -101,13 +100,13 @@ def cmd_curl_ncat(json_data):
     p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
     output, error = p.communicate()
 
-    #print type(output)
-    #print output
+    print type(output)
+    print output
 
     # output is str , and change to unicode
     latency = output.split('\n')
-    #print(type(latency[0]))
-    #print(latency)
+    print(type(latency[0]))
+    print(latency)
 
     # Result
     # latency: get from result
