@@ -69,7 +69,7 @@ def index(request):
     # Return Result
     dict = cmd_dict
     dict['dstip'] = dstip
-    #dict['datetime'] = str(time.ctime())
+    ##dict['datetime'] = str(time.ctime())
     logger_msg("response:"+ str(dict),"info")
     json = simplejson.dumps(dict)
     return HttpResponse(json)
@@ -99,6 +99,8 @@ def cmd_fping(json_data):
         cmd =  "ssh " + str(sshhostip) + " ' fping -c 5 " + str(dstip) + " -S " + str(srcip) + " ' "
     else:
         cmd =  "ssh " + str(sshhostip) + " ' fping -c 5 " + str(dstip) + " ' "
+
+    print cmd
 
     p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
     output, error = p.communicate()
@@ -138,6 +140,8 @@ def cmd_tcping(json_data):
     else:
         cmd = "ssh " + str(sshhostip) + " 'ncat -w4 --send-only -s " + str(srcip) + " " + str(dstip) +" "+ str(port) + " </dev/null' "
 
+    print cmd
+
     p = subprocess.Popen(cmd,shell=True,stdout=subprocess.PIPE)
     output, error = p.communicate()
 
@@ -150,12 +154,15 @@ def cmd_tcping(json_data):
 
 
 def logger_msg(msg,lvl="info"):
-    # Basic setting
-    #logging.basicConfig(level=logging.INFO,
-    #                format='%(asctime)s %(name)-s %(levelname)-s: %(message)s',
-    #                filename='/cloud/pings/logs/pings.log',
-    #                filemode='w')
+    # set up logging to file - see previous section for more details
+    logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(name)-s %(levelname)-s: %(message)s',
+                    #datefmt='%m-%d %H:%M',
+                    #filename='/cloud/pings/logs/pings.log-'+time.strftime("%Y-%m-%d"),
+                    filemode='a')
  
+    # Now, define a couple of other loggers which might represent areas in your
+    # application:
 
     logger1 = logging.getLogger('pings')
 
@@ -164,7 +171,7 @@ def logger_msg(msg,lvl="info"):
     formatter = logging.Formatter('%(asctime)s %(name)-s %(levelname)-s: %(message)s')
     filehandler.setFormatter(formatter)
     logger1.addHandler(filehandler)
-    logger1.setLevel(logging.INFO)
+
 
     if lvl == "error":
         logger1.error(msg)
@@ -172,5 +179,4 @@ def logger_msg(msg,lvl="info"):
         logger1.info(msg)
 
 
-    # REMOVE filehander
-    logger1.removeHandler(filehandler)
+   

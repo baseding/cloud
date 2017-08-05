@@ -69,7 +69,7 @@ def index(request):
     # Return Result
     dict = cmd_dict
     dict['dstip'] = dstip
-    #dict['datetime'] = str(time.ctime())
+    ##dict['datetime'] = str(time.ctime())
     logger_msg("response:"+ str(dict),"info")
     json = simplejson.dumps(dict)
     return HttpResponse(json)
@@ -150,21 +150,18 @@ def cmd_tcping(json_data):
 
 
 def logger_msg(msg,lvl="info"):
-    # Basic setting
-    #logging.basicConfig(level=logging.INFO,
-    #                format='%(asctime)s %(name)-s %(levelname)-s: %(message)s',
-    #                filename='/cloud/pings/logs/pings.log',
-    #                filemode='w')
- 
+    # set up logging to file - see previous section for more details
+    # Now, define a couple of other loggers which might represent areas in your
+    # application:
 
     logger1 = logging.getLogger('pings')
-
+    logger1.setLevel(logging.INFO) 
     LOG_FILE = '/cloud/pings/logs/pings.log'
     filehandler = logging.handlers.TimedRotatingFileHandler(LOG_FILE,when='midnight',interval=1,backupCount=90)
     formatter = logging.Formatter('%(asctime)s %(name)-s %(levelname)-s: %(message)s')
     filehandler.setFormatter(formatter)
     logger1.addHandler(filehandler)
-    logger1.setLevel(logging.INFO)
+
 
     if lvl == "error":
         logger1.error(msg)
@@ -172,5 +169,4 @@ def logger_msg(msg,lvl="info"):
         logger1.info(msg)
 
 
-    # REMOVE filehander
-    logger1.removeHandler(filehandler)
+   

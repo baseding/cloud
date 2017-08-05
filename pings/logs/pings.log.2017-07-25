@@ -1,2 +1,0 @@
-2017-07-26 01:00:03,650 pings INFO: request: {'json_data': [{'srcip': '218.202.226.119', 'dstip': '119.75.213.50', 'type': 'tcp ping', 'port': '80', 'sshhostip': '10.1.60.19'}]}
-2017-07-26 01:00:03,886 pings INFO: response:{u'port_status': 0, u'dstip': '119.75.213.50'}
