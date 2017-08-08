@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'alidns/style.css' %}" />
+
+{% if domains_list %}
+    <ul>
+    {% for p in domain_list %}
+        <li><a href="/">{{ p.DomainName }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

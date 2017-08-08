@@ -31,14 +31,8 @@ client = AcsClient(
 #
 @csrf_exempt
 def index(request):
-    domain_list = describedomains()
-    #return HttpResponse("result: " + result["Domain"][0]["DomainName"])
-    #return HttpResponse(domain_list["Domain"])
-    context = {'domain_list': domain_list["Domain"]}
-    #return HttpResponse(domain_list["Domain"][0])
-    return render(request, 'alidns/index.html', context) 
-
-   
+    result = describedomains()
+    return HttpResponse("result: " + result["Domain"][0]["DomainName"])
 
 def records(request):
     result = describedomainrecords()

@@ -1,0 +1,64 @@
+2017-08-06 21:15:30,397 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'pptv.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-08-06 21:15:30,424 httpd INFO: response:{u'lantency': u'0.019', u'domain': 'pptv.10690007.net'}
+2017-08-02 09:43:11,963 httpd INFO: request: {'json_data': [{'path': '/sms/2.0/mt', 'domain': 'xiaomi.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-08-02 09:43:13,011 httpd INFO: response:{u'lantency': u'1.038', u'domain': 'xiaomi.10690007.net'}
+2017-08-02 16:58:34,969 httpd INFO: request: {'json_data': [{'path': '/sms/2.0/mt', 'domain': 'xiaomi.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-08-02 16:58:35,010 httpd INFO: response:{u'lantency': u'0.032', u'domain': 'xiaomi.10690007.net'}
+2017-08-02 16:59:06,910 httpd INFO: request: {'json_data': [{'path': '/sms/2.0/mt', 'domain': 'xiaomi.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-08-02 16:59:06,929 httpd INFO: response:{u'lantency': u'0.011', u'domain': 'xiaomi.10690007.net'}
+2017-08-02 16:59:09,225 httpd INFO: request: {'json_data': [{'path': '/sms/2.0/mt', 'domain': 'xiaomi.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-08-02 16:59:09,245 httpd INFO: response:{u'lantency': u'0.011', u'domain': 'xiaomi.10690007.net'}
+2017-08-02 16:59:10,939 httpd INFO: request: {'json_data': [{'path': '/sms/2.0/mt', 'domain': 'xiaomi.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-08-02 16:59:10,959 httpd INFO: response:{u'lantency': u'0.011', u'domain': 'xiaomi.10690007.net'}
+2017-08-02 16:59:13,104 httpd INFO: request: {'json_data': [{'path': '/sms/2.0/mt', 'domain': 'xiaomi.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-08-02 16:59:13,124 httpd INFO: response:{u'lantency': u'0.011', u'domain': 'xiaomi.10690007.net'}
+2017-08-02 16:59:15,248 httpd INFO: request: {'json_data': [{'path': '/sms/2.0/mt', 'domain': 'xiaomi.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-08-02 16:59:15,269 httpd INFO: response:{u'lantency': u'0.011', u'domain': 'xiaomi.10690007.net'}
+2017-08-02 17:06:38,826 httpd INFO: request: {'json_data': [{'path': '/sms/2.0/mt', 'domain': 'xiaomi.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-08-02 17:06:38,846 httpd INFO: response:{u'lantency': u'0.012', u'domain': 'xiaomi.10690007.net'}
+2017-08-02 17:06:44,318 httpd INFO: request: {'json_data': [{'path': '/sms/2.0/mt', 'domain': 'xiaomi.10690007.net', 'type': 'http', 'port': '80'}]}
+2017-08-02 17:06:44,339 httpd INFO: response:{u'lantency': u'0.012', u'domain': 'xiaomi.10690007.net'}
+2017-08-02 17:07:00,380 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '80'}]}
+2017-08-02 17:07:00,400 httpd INFO: response:{u'lantency': u'0.012', u'domain': 'shdr.etonenet.com'}
+2017-08-02 17:40:58,858 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '80'}]}
+2017-08-02 17:40:58,895 httpd INFO: response:{u'lantency': u'0.011', u'domain': 'shdr.etonenet.com'}
+2017-08-02 17:41:14,663 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '80'}]}
+2017-08-02 17:41:14,704 httpd INFO: response:{u'lantency': u'0.011', u'domain': 'shdr.etonenet.com'}
+2017-08-02 17:43:04,825 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '80'}]}
+2017-08-02 17:43:04,846 httpd INFO: response:{u'lantency': u'', u'domain': 'shdr.etonenet.com'}
+2017-08-02 17:43:20,160 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'https', 'port': '443'}]}
+2017-08-02 17:43:28,609 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'https', 'port': '443'}]}
+2017-08-02 17:44:06,886 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'https', 'port': '443'}]}
+2017-08-02 17:50:36,918 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'https', 'port': '443'}]}
+2017-08-02 17:53:50,503 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '80'}]}
+2017-08-02 17:53:50,524 httpd INFO: response:{u'lantency': u'0', u'domain': 'shdr.etonenet.com'}
+2017-08-02 17:54:15,142 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'https', 'port': '443'}]}
+2017-08-02 17:55:49,088 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'https', 'port': '443'}]}
+2017-08-02 20:33:54,178 httpd INFO: request: {'json_data': [{'domain': 'shdr.etonenet.com', 'type': 'httpd', 'port': '80'}]}
+2017-08-02 20:33:54,178 httpd INFO: <type 'exceptions.KeyError'> || u'path'
+2017-08-02 20:35:07,239 httpd INFO: request: {'json_data': [{'domain': 'shdr.etonenet.com', 'type': 'httpd', 'port': '80'}]}
+2017-08-02 20:35:07,239 httpd INFO: <type 'exceptions.KeyError'> || u'path'
+2017-08-02 20:35:21,869 httpd INFO: request: {'json_data': [{'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '80'}]}
+2017-08-02 20:35:21,870 httpd INFO: <type 'exceptions.KeyError'> || u'path'
+2017-08-02 20:37:00,365 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '80'}]}
+2017-08-02 20:37:00,385 httpd INFO: response:{u'lantency': u'0.011', u'domain': 'shdr.etonenet.com'}
+2017-08-02 20:37:13,313 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-08-02 20:37:13,775 httpd INFO: response:{u'lantency': u'0.451', u'domain': 'shdr.etonenet.com'}
+2017-08-02 20:37:48,479 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-08-02 20:37:48,629 httpd INFO: response:{u'lantency': u'0.133', u'domain': 'shdr.etonenet.com'}
+2017-08-02 20:38:28,424 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-08-02 20:38:28,561 httpd INFO: response:{u'lantency': u'0.128', u'domain': 'shdr.etonenet.com'}
+2017-08-02 20:39:14,823 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-08-02 20:39:14,975 httpd INFO: response:{u'lantency': u'0.141', u'domain': 'shdr.etonenet.com'}
+2017-08-02 20:39:24,914 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-08-02 20:39:25,055 httpd INFO: response:{u'lantency': u'0.132', u'domain': 'shdr.etonenet.com'}
+2017-08-02 20:40:18,030 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-08-02 20:40:18,336 httpd INFO: response:{u'lantency': u'0.111', u'domain': 'shdr.etonenet.com'}
+2017-08-02 20:40:25,505 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-08-02 20:40:25,767 httpd INFO: response:{u'lantency': u'0.114', u'domain': 'shdr.etonenet.com'}
+2017-08-02 20:40:34,725 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '80'}]}
+2017-08-02 20:40:34,745 httpd INFO: response:{u'lantency': u'0', u'domain': 'shdr.etonenet.com'}
+2017-08-02 20:40:39,620 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '80'}]}
+2017-08-02 20:40:39,640 httpd INFO: response:{u'lantency': u'0', u'domain': 'shdr.etonenet.com'}
+2017-08-02 20:40:46,891 httpd INFO: request: {'json_data': [{'path': '/sms/mt', 'domain': 'shdr.etonenet.com', 'type': 'http', 'port': '443'}]}
+2017-08-02 20:40:47,156 httpd INFO: response:{u'lantency': u'0.113', u'domain': 'shdr.etonenet.com'}
