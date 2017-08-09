@@ -1,0 +1,11 @@
+
+<form action="{% url 'alidns:add' %}" method="post">
+{% csrf_token %}
+
+    <label>Domain: </label><input type="text" name="rr" id="" value="" /><br />
+    <label>Type: </label><input type="text" name="record" id="" value="" /><br />
+
+<input type="submit" value="add" />
+</form>
+
+

@@ -1,12 +1,9 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'alidns/style.css' %}" />
-<script type="text/javascript" src="{% static 'jquery/jquery-3.2.1.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'alidns/js/functions.js' %}"></script>
 
 
-<button id="btnAdd">New</button> 
-<table id="tblData">
+<table>
     <caption> Domain Record List </caption>
     <thead>
         <tr>
@@ -17,23 +14,20 @@
           <th> TTL </th>
         </tr>
     </thead>
-    <tbody>
 
 {% if domain_record_list %}
     {% for p in domain_record_list %}
+    <tbody>
         <tr>
-          <td><a href="/">{{ p.RR }}</a></td>
+          <td><a href="/">{{ p.RR }}</a><td>
           <td><a href="/">{{ p.Type }}</a></td>
           <td><a href="/">{{ p.Line }}</a></td>
           <td><a href="/">{{ p.Value }}</a></td>
           <td><a href="/">{{ p.TTL }}</a></td>
         </tr>
+    </tbody>
     {% endfor %}
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
-
-    </tbody>
 </table>
-
-

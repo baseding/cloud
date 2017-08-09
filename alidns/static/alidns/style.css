@@ -53,10 +53,6 @@ tbody tr.odd th,tbody tr.odd td {
     border-bottom: 2px solid #67BD2A;
 }
 
-td+td+td, 
-col.price{ 
-    text-align:right;
-}
 
 tbody tr:hover td, tbody tr:hover th { 
     background-color: #8b7;

@@ -54,9 +54,14 @@ def records(request):
     #return HttpResponse(domain_record_list["DomainRecords"]["Record"])
 
 
-def add(request):
+def update(request):
+    domain_list = updatedomainrecord()
+    #return HttpResponse("result: " + result["Domain"][0]["DomainName"])
 
-    return render(request, 'alidns/add.html')
+    context = {'domain_list': domain_list["Domain"]}
+
+    #return HttpResponse(domain_list["Domain"][0])
+    return render(request, 'alidns/index.html', context)
 
 
 def describedomains():
@@ -85,27 +90,6 @@ def describedomainrecords():
     response = yaml.safe_load(client.do_action_with_exception(request))
 
     return(response)
-
-
-def adddomainrecord():
-    # 2. Create request, with params
-    request = AddDomainRecordRequest.AddDomainRecordRequest()
-    request.set_DomainName('azza.com.cn')
-    request.set_RR('test4')
-    request.set_Type('A')
-    request.set_Value('4.4.4.4')
-    #request.set_RecordId('3427090946544640')
-    request.set_TTL('600')
-    request.set_accept_format('json')
-
-
-    # 3. Send API request,and print response
-    response = yaml.safe_load(client.do_action_with_exception(request))
-
-    return(response)
-
-
-
 
 
 

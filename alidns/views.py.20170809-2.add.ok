@@ -55,8 +55,11 @@ def records(request):
 
 
 def add(request):
+    record_result = adddomainrecord()
+    context = {'domain_list': domain_list["Domain"]}
 
-    return render(request, 'alidns/add.html')
+    return HttpResponse(record_result)
+    #return render(request, 'alidns/index.html', context)
 
 
 def describedomains():
