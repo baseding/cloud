@@ -59,27 +59,23 @@ def records(request):
 
 def add(request):
 
+    # if this is a POST request we need to process the form data
     if request.method == 'POST':
+        print 1
         # create a form instance and populate it with data from the request:
         form = RecordForm(request.POST)
-
         # check whether it's valid:
         if form.is_valid():
             # process the data in form.cleaned_data as required
-            data_dict = {}
-            data_dict['domain']=form.cleaned_data['domain']
-            data_dict['rr']=form.cleaned_data['rr']
-            data_dict['type']=form.cleaned_data['type']
-            data_dict['record_value']=form.cleaned_data['record_value']
-            data_dict['ttl']=form.cleaned_data['ttl']
-
-            result = adddomainrecord(data_dict)
-
+            # ...
             # redirect to a new URL:
             return HttpResponseRedirect('/alidns/thanks/')
 
+    # if a GET (or any other method) we'll create a blank form
     else:
+        print 2
         form = RecordForm()
+
 
     return render(request, 'alidns/add.html', {'form': form})
 
@@ -115,26 +111,16 @@ def describedomainrecords():
     return(response)
 
 
-def adddomainrecord(data_dict):
+def adddomainrecord():
     # 2. Create request, with params
-
-    #request = AddDomainRecordRequest.AddDomainRecordRequest()
-    #request.set_DomainName('azza.com.cn')
-    #request.set_RR('test4')
-    #request.set_Type('A')
-    #request.set_Value('4.4.4.4')
-    ##request.set_RecordId('3427090946544640')
-    #request.set_TTL('600')
-    #request.set_accept_format('json')
-
     request = AddDomainRecordRequest.AddDomainRecordRequest()
-    request.set_DomainName(data_dict["domain"])
-    request.set_RR(data_dict["rr"])
-    request.set_Type(data_dict["type"])
-    request.set_Value(data_dict['record_value'])
+    request.set_DomainName('azza.com.cn')
+    request.set_RR('test4')
+    request.set_Type('A')
+    request.set_Value('4.4.4.4')
     #request.set_RecordId('3427090946544640')
-    request.set_TTL(data_dict["ttl"])
-
+    request.set_TTL('600')
+    request.set_accept_format('json')
 
 
     # 3. Send API request,and print response

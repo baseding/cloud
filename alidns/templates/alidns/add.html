@@ -1,11 +1,15 @@
+<link rel="stylesheet" type="text/css" href="/static/alidns/style.css" />
 
-<form action="{% url 'alidns:add' %}" method="post">
-{% csrf_token %}
+<table id="tblData">
+    <caption> Add a Domain Record </caption>
+    <thead>
 
-    <label>Domain: </label><input type="text" name="rr" id="" value="" /><br />
-    <label>Type: </label><input type="text" name="record" id="" value="" /><br />
-
-<input type="submit" value="add" />
-</form>
-
+    </thead>
+    <tbody>
+    <form action="{% url 'alidns:add' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="add" />
+    </form>
+    </tbody>
 
